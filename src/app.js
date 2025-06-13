@@ -15,6 +15,11 @@ if (process.env.NODE_ENV !== 'test') {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+// Root route
+app.get('/', (req, res) => {
+  res.send('Welcome to my Node.js app!');
+});
+
 // for testing purposes
 app.get('/test', (req, res) => {
   res.status(200).send({ text: 'Simple Node App Working!' });
